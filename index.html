@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finanças Pessoais</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="assets/fa/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<body>
+  <div class="container fundo">
+    <div class="section-hq" id="page-1">
+      <img src="assets/img/HQ-financas-1.jpg" class="img-fluid" alt="História em quadrinho">
+      <a href="#page-2" type="button" onclick="tocarClique()" class="seta" id="seta1"><span class="material-symbols-outlined">
+          <p class="fonte proximo">Próximo <i class="fa-solid fa-arrow-down"></i></p>
+        </span></a>
+    </div>
+
+    <div class="section-hq" id="page-2" class="esconde">
+      <img src="assets/img/HQ-financas-2.jpg" class="img-fluid" alt="História em quadrinho">
+      <a href="#page-3" type="button" onclick="tocarClique()" class="seta" id="seta2"><span class="material-symbols-outlined">
+          <p class="fonte proximo">Próximo <i class="fa-solid fa-arrow-down"></i></p>
+        </span></a>
+    </div>
+
+    <div class="section-hq" id="page-3" class="esconde">
+      <div class="tela tela-tres row">
+        <div class="col-md-6 coluna-1">
+          <div class="secao secao-fixas">
+            <h3 class="fonte">Fixas</h3>
+          </div>
+          <div class="secao secao-variaveis">
+            <h3 class="fonte">Variáveis</h3>
+          </div>
+          <div class="secao secao-lazer">
+            <h3 class="fonte">Lazer</h3>
+          </div>
+          <button type="button" onclick="tocarClique()" class="btn btn-block m-3 fonte disabled" id="verificar">Verificar</button>
+        </div>
+        <div class="col-md-6 coluna-2 d-flex align-items-center justify-content-center">
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="pizza">Pizza todo sábado</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="universidade">Pagar mensalidade da universidade</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="acampamento">Acampamento com os amigos</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="luz">Conta de luz</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="aluguel">Aluguel</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="condominio">Condomínio</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="limpeza">Produtos de limpeza</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="presentes">Presentes</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="praia">Praia final de semana</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Modal para Feedback Positivo -->
+  <div class="modal fade" id="feedbackPositivoModal" tabindex="-1" aria-labelledby="feedbackPositivoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackPositivoModalLabel">Sucesso</h5>
+          <button type="button" onclick="tocarClique()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Muito bem! Você conseguiu colocar todos os itens nos lugares corretos. Estou orgulhosa de você!</p>
+          <img src="" alt="Feedback Positivo" class="modal-img">
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="tocarClique()" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Feedback Negativo -->
+  <div class="modal fade" id="feedbackNegativoModal" tabindex="-1" aria-labelledby="feedbackNegativoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackNegativoModalLabel">Ops! Tente novamente.</h5>
+          <button type="button" onclick="tocarClique()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Você acertou alguns itens, mas alguns ficaram incorretos. Gostaria de tentar novamente?</p>
+          <img src="" alt="Feedback Negativo" class="modal-img">
+        </div>
+        <div class="modal-footer">
+          <button type="button" onclick="tocarClique()" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <audio id="somBotao" src="assets/audio/clique.mp3"></audio>
+  
+  <!-- Versao atual do handtalk -->
+
+  <script>
+    var scriptElem = document.createElement("script");
+    scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+      scriptElem.charset = "UTF-8",
+      scriptElem.onload = function () {
+        window.ht = new HT({
+          token: "bf5b7efb148a829a126a0e0c9fd533bf",
+          align: "top",
+          videoEnabled: true,
+          ytEmbedReplace: true,
+          mobileConfig: {
+            align: "right",
+            actionsAlign: "top",
+            customButtonStyle: {
+              borderRadius: "6px",
+              size: "38px",
+              horizontalMargin: "13px",
+              bottomMargin: "140px",
+              rightMargin: "40px"
+            }
+          }
+        });
+        $('.ht-skip').attr("aria-hidden", "true")
+      },
+      document.body.appendChild(scriptElem);
+  </script>
+  <script>
+    window.addEventListener("load", AOS.refresh);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
