@@ -1,6 +1,5 @@
 .section-hq {
   width: 100%;
-  justify-content: top;
   align-items: center;
   flex-wrap: wrap;
   scroll-behavior: smooth;
@@ -44,6 +43,10 @@
   font-family: 'Patrick Hand', cursive !important;
 }
 
+.tam-fonte {
+  font-size: 23px;
+}
+
 .esconde {
   display: none;
 }
@@ -64,6 +67,16 @@
 #page-3 {
   margin-top: 4%;
   position: static;
+}
+
+.intro-game {
+  display: flex;
+  align-items: center;
+}
+
+.intro-financas {
+  color: white;
+  font-size: 18px !important;
 }
 
 .coluna-1 {
@@ -93,12 +106,12 @@
   background-color: #F2D16D;
 }
 
-#verificar{
-  background-color: #d7f5ad!important;
+#verificar {
+  background-color: #d7f5ad !important;
   font-size: 21px !important;
 }
 
-#verificar:hover{
+#verificar:hover {
   background-color: #94F2D0 !important;
 }
 
@@ -117,6 +130,34 @@
   cursor: move !important;
 }
 
-.btn-info:hover{
+.btn-info:hover {
   background-color: #F2D16D !important;
+}
+
+
+@media (min-width: 768px) {
+  .img-intro {
+    display: block;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .img-intro {
+    display: none;
+  }
+}
+
+/*************************************************************************/
+/************************** estilo modais ********************************/
+/*************************************************************************/
+
+.borda-negativa {
+  background-color: #fd0000 !important;
+  color: white;
+}
+
+.borda-positiva {
+  background-color: #94F2D0;
+  color: #444567;
 }

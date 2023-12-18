@@ -17,19 +17,38 @@
   <div class="container fundo">
     <div class="section-hq" id="page-1">
       <img src="assets/img/HQ-financas-1.jpg" class="img-fluid" alt="História em quadrinho">
-      <a href="#page-2" type="button" onclick="tocarClique()" class="seta" id="seta1"><span class="material-symbols-outlined">
-          <p class="fonte proximo">Próximo <i class="fa-solid fa-arrow-down"></i></p>
-        </span></a>
+      <a href="#page-2" class="seta som-clique" id="seta1">
+        <div class="material-symbols-outlined">
+          <p class="fonte proximo">Próximo
+            <i class="fa-solid fa-arrow-down"></i>
+          </p>
+        </div>
+      </a>
     </div>
 
-    <div class="section-hq" id="page-2" class="esconde">
+    <div class="section-hq esconde" id="page-2">
       <img src="assets/img/HQ-financas-2.jpg" class="img-fluid" alt="História em quadrinho">
-      <a href="#page-3" type="button" onclick="tocarClique()" class="seta" id="seta2"><span class="material-symbols-outlined">
-          <p class="fonte proximo">Próximo <i class="fa-solid fa-arrow-down"></i></p>
-        </span></a>
+      <a href="#page-3" class="seta som-clique" id="seta2">
+        <div class="material-symbols-outlined">
+          <p class="fonte proximo">Próximo
+            <i class="fa-solid fa-arrow-down"></i>
+          </p>
+        </div>
+      </a>
     </div>
 
-    <div class="section-hq" id="page-3" class="esconde">
+    <div class="section-hq esconde" id="page-3">
+      <div class="intro-game row intro-financas">
+        <div class="img-intro col-md-3">
+          <img src="assets/img/HQ-financas-3.png" class="img-fluid" alt="História em quadrinho">
+        </div>
+        <div class="col-md-9">
+          <p class="fonte tam-fonte">
+            Arraste suas despesas entre categorias como contas fixas, lazer e variáveis neste Desafio de Finanças
+            Pessoais interativo. Vamos praticar aprimorando suas habilidades de orçamento.
+          </p>
+        </div>
+      </div>
       <div class="tela tela-tres row">
         <div class="col-md-6 coluna-1">
           <div class="secao secao-fixas">
@@ -41,22 +60,25 @@
           <div class="secao secao-lazer">
             <h3 class="fonte">Lazer</h3>
           </div>
-          <button type="button" onclick="tocarClique()" class="btn btn-block m-3 fonte disabled" id="verificar">Verificar</button>
+          <button type="button" class="btn som-clique btn-block m-3 fonte disabled " id="verificar">Verificar</button>
         </div>
         <div class="col-md-6 coluna-2 d-flex align-items-center justify-content-center">
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="pizza">Pizza todo sábado</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="universidade">Pagar mensalidade da universidade</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="acampamento">Acampamento com os amigos</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="luz">Conta de luz</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="aluguel">Aluguel</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="condominio">Condomínio</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="limpeza">Produtos de limpeza</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="presentes">Presentes</div>
-          <div class="btn fonte w-75 m-2 btn-info draggable" onclick="tocarClique()" id="praia">Praia final de semana</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="pizza">Pizza todo sábado</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="universidade">Pagar mensalidade
+            da universidade</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="acampamento">Acampamento com os
+            amigos</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="luz">Conta de luz</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="aluguel">Aluguel</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="condominio">Condomínio</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="limpeza">Produtos de limpeza
+          </div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="presentes">Presentes</div>
+          <div class="btn fonte w-75 m-2 btn-info draggable som-clique" id="praia">Praia final de semana
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
 
@@ -65,16 +87,22 @@
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="feedbackPositivoModalLabel">Sucesso</h5>
-          <button type="button" onclick="tocarClique()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <div class="modal-header borda-positiva">
+          <h3 class="modal-title fonte" id="feedbackPositivoModalLabel">Sucesso!</h3>
+          <button type="button" class="btn-close som-clique" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-        <div class="modal-body">
-          <p>Muito bem! Você conseguiu colocar todos os itens nos lugares corretos. Estou orgulhosa de você!</p>
-          <img src="" alt="Feedback Positivo" class="modal-img">
+        <div class="modal-body body-modal row">
+          <div class="col-md-7">
+            <p class="fonte tam-fonte">Muito bem! Você conseguiu colocar todos os itens nos lugares corretos. Estou
+              orgulhosa de
+              você!</p>
+          </div>
+          <div class="col-md-5">
+            <img src="assets/img/positivo.png" class="img-fluid" alt="História em quadrinho">
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" onclick="tocarClique()" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-secondary som-clique" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
@@ -85,24 +113,31 @@
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="feedbackNegativoModalLabel">Ops! Tente novamente.</h5>
-          <button type="button" onclick="tocarClique()" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <div class="modal-header borda-negativa">
+          <h3 class="modal-title fonte" id="feedbackNegativoModalLabel">Ops! Tente novamente.</h3>
+          <button type="button" class="btn-close som-clique" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-        <div class="modal-body">
-          <p>Você acertou alguns itens, mas alguns ficaram incorretos. Gostaria de tentar novamente?</p>
-          <img src="" alt="Feedback Negativo" class="modal-img">
+        <div class="modal-body body-modal row">
+          <div class="col-md-9">
+            <p class="fonte tam-fonte">Você acertou alguns itens, mas alguns ficaram incorretos. Gostaria de tentar
+              novamente?</p>
+          </div>
+          <div class="img-intro col-md-2">
+            <img src="assets/img/negativo.png" class="img-fluid" alt="História em quadrinho">
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" onclick="tocarClique()" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-secondary som-clique" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
   </div>
 
-
-  <audio id="somBotao" src="assets/audio/clique.mp3"></audio>
-  
+  <div>
+    <audio id="audio-correto" src="assets/audio/acerto.mp3" preload="auto"></audio>
+    <audio id="audio-incorreto" src="assets/audio/erro.mp3" preload="auto"></audio>
+    <audio id="somBotao" src="assets/audio/clique.mp3" preload="auto"></audio>
+  </div>
   <!-- Versao atual do handtalk -->
 
   <script>
