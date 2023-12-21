@@ -1,3 +1,29 @@
+header.senac {
+  background-color: #007798;
+}
+
+.header-tecnicos {
+  position: relative;
+  overflow: hidden;
+  height: 80px;
+  background-image: url(../img/bg-topo-logobg.png), url(../img/bg-topo-fill.png) !important;
+  background-position: right, left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, cover;
+}
+
+#nome-curso {
+  position: relative;
+  display: block;
+  float: left;
+  top: 1.3em !important;
+  left: 2.0em;
+  font-size: 1.5em;
+  font-family: 'robotoregular', Arial, Verdana, Helvetica;
+  text-transform: uppercase;
+  color: white;
+}
+
 .section-hq {
   width: 100%;
   align-items: center;
@@ -7,8 +33,13 @@
   margin-top: 0%;
 }
 
+#sombra{
+	height:3px;
+}
+
+
 .fundo {
-  background-color: #444567;
+  background-color: #004d77;
 }
 
 .material-symbols-outlined {
@@ -56,8 +87,8 @@
 /*************************************************************************/
 
 #page-1 {
-  margin-top: 7%;
   position: static;
+  padding-top: 82px;
 }
 
 /*************************************************************************/
@@ -91,7 +122,7 @@
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
-  color: #444567;
+  color: #004d77;
 }
 
 .secao-fixas {
@@ -124,7 +155,7 @@
 .btn-info {
   background-color: #f1e0ff !important;
   border: 2px solid #595a86 !important;
-  color: #444567 !important;
+  color: #004d77 !important;
   font-size: 18px !important;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   cursor: move !important;
@@ -159,5 +190,5 @@
 
 .borda-positiva {
   background-color: #94F2D0;
-  color: #444567;
+  color: #004d77;
 }
